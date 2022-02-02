@@ -36,12 +36,14 @@ form.addEventListener("submit", function (e){
     result.innerHTML = `<p class="result">${text[random]}</p>`;
   }else{
     //if the user enters the right value between 1-9
+    //make a new copy of the array with the selected value only
     let tempText = text.slice(0,value)  //0 = starting at, value = ending at
+    //iterate over the new array and add the patagraphs
     tempText = tempText.map(function(para){
       return `<p class="result">${para}</p>`
     }).join(" ");
     result.innerHTML = tempText;
   }
 
-
+ 
 })
