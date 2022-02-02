@@ -30,9 +30,17 @@ form.addEventListener("submit", function (e){
   //***If the value is***//
   //empty
   //-1
+  //0
   //>9
-  if(isNaN(value) || value < 0 || value > 9){
+  if(isNaN(value) || value <= 0 || value > 9){
     result.innerHTML = `<p class="result">${text[random]}</p>`;
+  }else{
+    //if the user enters the right value between 1-9
+    let tempText = text.slice(0,value)  //0 = starting at, value = ending at
+    tempText = tempText.map(function(para){
+      return `<p class="result">${para}</p>`
+    }).join(" ");
+    result.innerHTML = tempText;
   }
 
 
